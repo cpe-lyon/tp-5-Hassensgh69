@@ -53,3 +53,6 @@ Pour ce faire j' ajoute a la fin du fichier /etc/fstab `/dev/sdc1 ext4 defaults 
       sudo mount /dev/usb  /data1
       
 9.       
+
+
+## Exercice 2. Partitionnement LVM
