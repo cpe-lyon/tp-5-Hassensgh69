@@ -32,3 +32,24 @@ Pour formater la première partition on tappe la commande suivante `mkfs.ext4 /d
 Et pour formater la seconde partition on tappe la commande suivante `mkfs.ntfs /dev/sdc2`
 
 ![image](https://user-images.githubusercontent.com/80455696/194265417-013c2108-6121-4d66-9f47-a8f698e8b22c.png)
+
+5. Pourquoi la commande df -T, qui affiche le type de système de fichier des partitions, ne fonctionne-telle pas sur notre disque ?
+
+La commande `df -T` ne marche pas car nos disques ne sont pas encores montés .
+
+6. Faites en sorte que les deux partitions créées soient montées automatiquement au démarrage de la machine, respectivement dans les points de montage /data et /win (vous pourrez vous passer des UUID en raison de l’impossibilité d’effectuer des copier-coller)
+
+Pour ce faire j' ajoute a la fin du fichier /etc/fstab `/dev/sdc1 ext4 defaults 0 0` et `/dev/sdc2 ntfs defaults 0 0`
+
+![image](https://user-images.githubusercontent.com/80455696/194273645-b7ba75a9-f793-4476-bd84-c7045d15e9a0.png)
+
+7. Utilisez la commande mount puis redémarrez votre VM pour valider la configuration
+
+      sudo mount /dev/sdc1 /data
+      sudo mount /dev/sdc2 /win
+      
+8. Montez votre clé USB dans la VM
+
+      sudo mount /dev/usb  /data1
+      
+9.       
