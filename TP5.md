@@ -17,4 +17,10 @@ Après l'ajout du nouveau disque on peut voir qu'un nouveau disque est apparue s
 
 ![image](https://user-images.githubusercontent.com/80455696/194242628-37375a12-194f-4b3d-af12-3b8608084828.png)
 
-3. 
+3. 3. Partitionnez ce disque en utilisant fdisk : créez une première partition de 2 Go de type Linux (n°83), et une seconde partition de 3 Go en NTFS (n°7)
+
+Grace a la commande `fdisk /dev/sdc -l` qui nous indique le type de chaque partion on peut voir qu'on a bien les deux paritions demandés :
+
+![image](https://user-images.githubusercontent.com/80455696/194247616-bc6d2880-605b-4898-9e08-e0ed6718cee7.png)
+
+4. A ce stade, les partitions ont été créées, mais elles n’ont pas été formatées avec leur système de fichiers.A l’aide de la commande mkfs, formatez vos deux partitions 
