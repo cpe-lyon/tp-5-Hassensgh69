@@ -45,12 +45,12 @@ Pour ce faire j' ajoute a la fin du fichier /etc/fstab `/dev/sdc1 ext4 defaults 
 
 7. Utilisez la commande mount puis redémarrez votre VM pour valider la configuration
 
-      sudo mount /dev/sdc1 /data
-      sudo mount /dev/sdc2 /win
+            sudo mount /dev/sdc1 /data
+            sudo mount /dev/sdc2 /win
       
 8. Montez votre clé USB dans la VM
 
-      sudo mount /dev/usb  /data1
+            sudo mount /dev/usb  /data1
       
 9.       
 
