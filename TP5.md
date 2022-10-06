@@ -24,3 +24,11 @@ Grace a la commande `fdisk /dev/sdc -l` qui nous indique le type de chaque parti
 ![image](https://user-images.githubusercontent.com/80455696/194247616-bc6d2880-605b-4898-9e08-e0ed6718cee7.png)
 
 4. A ce stade, les partitions ont été créées, mais elles n’ont pas été formatées avec leur système de fichiers.A l’aide de la commande mkfs, formatez vos deux partitions 
+
+Pour formater la première partition on tappe la commande suivante `mkfs.ext4 /dev/sdc1`
+
+![image](https://user-images.githubusercontent.com/80455696/194264149-aed64855-95e3-4b6c-a2ac-1f5a2814e47c.png)
+
+Et pour formater la seconde partition on tappe la commande suivante `mkfs.ntfs /dev/sdc2`
+
+![image](https://user-images.githubusercontent.com/80455696/194265417-013c2108-6121-4d66-9f47-a8f698e8b22c.png)
