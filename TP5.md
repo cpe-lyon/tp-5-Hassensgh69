@@ -91,3 +91,15 @@ La commande `pvdispaly` permet de validez que le volume physique LVM a bien ét�
 
 4. A l’aide de la commande vgcreate, créez un groupe de volumes, qui pour l’instant ne contiendra que
 le volume physique créé à l’étape précédente. Vérifiez à l’aide de la commande vgdisplay.
+
+![image](https://user-images.githubusercontent.com/80455696/194699306-a06623cc-b544-4c6a-947f-d69bb3d723fe.png)
+
+5. Créez un volume logique appelé lvData occupant l’intégralité de l’espace disque disponible
+
+![image](https://user-images.githubusercontent.com/80455696/194699501-9b234c72-fbe6-4ecf-9491-eede725b9031.png)
+
+6. Dans ce volume logique, créez une partition que vous formaterez en ext4, puis procédez comme dans
+l’exercice 1 pour qu’elle soit montée automatiquement, au démarrage de la machine, dans /data.
+
+![image](https://user-images.githubusercontent.com/80455696/194699866-c2b53a20-19a2-44d9-9326-add772ef345c.png)
+
