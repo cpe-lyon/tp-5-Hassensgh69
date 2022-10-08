@@ -17,19 +17,19 @@ Après l'ajout du nouveau disque on peut voir qu'un nouveau disque est apparue s
 
 ![image](https://user-images.githubusercontent.com/80455696/194242628-37375a12-194f-4b3d-af12-3b8608084828.png)
 
-3. 3. Partitionnez ce disque en utilisant fdisk : créez une première partition de 2 Go de type Linux (n°83), et une seconde partition de 3 Go en NTFS (n°7)
+3. Partitionnez ce disque en utilisant fdisk : créez une première partition de 2 Go de type Linux (n°83), et une seconde partition de 3 Go en NTFS (n°7)
 
-Grace a la commande `fdisk /dev/sdc -l` qui nous indique le type de chaque partion on peut voir qu'on a bien les deux paritions demandés :
+Grace a la commande `fdisk /dev/sdb -l` qui nous indique le type de chaque partion on peut voir qu'on a bien les deux paritions demandés :
 
-![image](https://user-images.githubusercontent.com/80455696/194247616-bc6d2880-605b-4898-9e08-e0ed6718cee7.png)
+![image](https://user-images.githubusercontent.com/80455696/194697648-df8bb0f3-ed46-41f3-a3ab-9975bec7f094.png)
 
 4. A ce stade, les partitions ont été créées, mais elles n’ont pas été formatées avec leur système de fichiers.A l’aide de la commande mkfs, formatez vos deux partitions 
 
-Pour formater la première partition on tappe la commande suivante `mkfs.ext4 /dev/sdc1`
+Pour formater la première partition on tappe la commande suivante `mkfs.ext4 /dev/sdb1`
 
 ![image](https://user-images.githubusercontent.com/80455696/194264149-aed64855-95e3-4b6c-a2ac-1f5a2814e47c.png)
 
-Et pour formater la seconde partition on tappe la commande suivante `mkfs.ntfs /dev/sdc2`
+Et pour formater la seconde partition on tappe la commande suivante `mkfs.ntfs /dev/sdb2`
 
 ![image](https://user-images.githubusercontent.com/80455696/194265417-013c2108-6121-4d66-9f47-a8f698e8b22c.png)
 
@@ -41,12 +41,12 @@ La commande `df -T` ne marche pas car nos disques ne sont pas encores montés .
 
 Pour ce faire j' ajoute a la fin du fichier /etc/fstab `/dev/sdc1 ext4 defaults 0 0` et `/dev/sdc2 ntfs defaults 0 0`
 
-![image](https://user-images.githubusercontent.com/80455696/194273645-b7ba75a9-f793-4476-bd84-c7045d15e9a0.png)
+![image](https://user-images.githubusercontent.com/80455696/194697881-477ca0d5-8258-485c-8931-b7d84fef6506.png)
 
 7. Utilisez la commande mount puis redémarrez votre VM pour valider la configuration
 
-            sudo mount /dev/sdc1 /data
-            sudo mount /dev/sdc2 /win
+            sudo mount /dev/sdb1 /data
+            sudo mount /dev/sdb2 /win
       
 8. Montez votre clé USB dans la VM
 
@@ -56,3 +56,5 @@ Pour ce faire j' ajoute a la fin du fichier /etc/fstab `/dev/sdc1 ext4 defaults 
 
 
 ## Exercice 2. Partitionnement LVM
+
+
