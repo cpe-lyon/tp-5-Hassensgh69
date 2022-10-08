@@ -74,36 +74,41 @@ Pour supprimer les deux partitions on tappe la commande suivante `sudo fdisk /de
 
 ![image](https://user-images.githubusercontent.com/80455696/194698431-cb84a20c-c31d-40e5-999e-7b40fae3b474.png)
 
+( J'ai eu un problème avec la MACHINE VIRTUELLE de base j'ai donc chnager de vm !!! )
+
 On créer ensuite une nouvelle partition :
 
-![image](https://user-images.githubusercontent.com/80455696/194701726-628e435f-0fa0-4897-b5aa-4b1bade3535d.png)
+![image](https://user-images.githubusercontent.com/80455696/194698537-e25d5b69-3a29-4fe2-87e8-db462ab67774.png)
 
 3. A l’aide de la commande pvcreate, créez un volume physique LVM. Validez qu’il est bien créé, en
 utilisant la commande pvdisplay.
 
 La commande `pvcreate` permet de créez un volume physique LVM.
-
-![image](https://user-images.githubusercontent.com/80455696/194699067-30c856ea-cd8e-43e9-bb6b-8aab23305213.png)
-
 La commande `pvdispaly` permet de validez que le volume physique LVM a bien été créer.
 
-![image](https://user-images.githubusercontent.com/80455696/194699078-413ee36f-2f6f-4234-95fe-f3aa343bb8d1.png)
+![image](https://user-images.githubusercontent.com/80455696/194701978-e17aeccd-be90-44d3-96d8-4a9bc8de4425.png)
+
 
 4. A l’aide de la commande vgcreate, créez un groupe de volumes, qui pour l’instant ne contiendra que
 le volume physique créé à l’étape précédente. Vérifiez à l’aide de la commande vgdisplay.
 
-![image](https://user-images.githubusercontent.com/80455696/194699306-a06623cc-b544-4c6a-947f-d69bb3d723fe.png)
+![image](https://user-images.githubusercontent.com/80455696/194702153-91be949a-de7b-4fc1-9e17-1ec5d37f9b97.png)
 
 5. Créez un volume logique appelé lvData occupant l’intégralité de l’espace disque disponible
 
-![image](https://user-images.githubusercontent.com/80455696/194699501-9b234c72-fbe6-4ecf-9491-eede725b9031.png)
+![image](https://user-images.githubusercontent.com/80455696/194702252-b46a3bc1-3302-44cb-83ed-04e51f1de9fa.png)
 
 6. Dans ce volume logique, créez une partition que vous formaterez en ext4, puis procédez comme dans
 l’exercice 1 pour qu’elle soit montée automatiquement, au démarrage de la machine, dans /data.
 
-![image](https://user-images.githubusercontent.com/80455696/194699866-c2b53a20-19a2-44d9-9326-add772ef345c.png)
+![image](https://user-images.githubusercontent.com/80455696/194702513-6397efcf-730b-4d73-ac60-471d652c5b78.png)
 
-![image](https://user-images.githubusercontent.com/80455696/194699997-6ce91d70-08dc-4ef5-a40b-6388c68a4007.png)
+![image](https://user-images.githubusercontent.com/80455696/194702572-bce3a658-e062-49df-a56c-dcc251a36dbd.png)
+
+![image](https://user-images.githubusercontent.com/80455696/194702636-f6bf94ab-cddd-429a-9a1a-0fe1eaf3d211.png)
+
+![image](https://user-images.githubusercontent.com/80455696/194702683-c6d30f50-4611-4c3b-aeb2-11f1c4ffe985.png)
+
 
 7. Eteignez la VM pour ajouter un second disque (peu importe la taille pour cet exercice). Redémarrez
 la VM, vérifiez que le disque est bien présent. Puis, répétez les questions 2 et 3 sur ce nouveau disque.
