@@ -101,7 +101,7 @@ le volume physique créé à l’étape précédente. Vérifiez à l’aide de l
 6. Dans ce volume logique, créez une partition que vous formaterez en ext4, puis procédez comme dans
 l’exercice 1 pour qu’elle soit montée automatiquement, au démarrage de la machine, dans /data.
 
-On créer la partion en tappant `fdisk /dev/mapper/vg1-lvDATA `
+On créer la partion avec la commande `fdisk /dev/mapper/vg1-lvDATA `
 
 ![image](https://user-images.githubusercontent.com/80455696/194702513-6397efcf-730b-4d73-ac60-471d652c5b78.png)
 
