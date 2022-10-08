@@ -74,11 +74,11 @@ Pour supprimer les deux partitions on tappe la commande suivante `sudo fdisk /de
 
 ![image](https://user-images.githubusercontent.com/80455696/194698431-cb84a20c-c31d-40e5-999e-7b40fae3b474.png)
 
-( J'ai eu un problème avec la MACHINE VIRTUELLE de base j'ai donc chnager de vm !!! )
 
 On créer ensuite une nouvelle partition :
 
-![image](https://user-images.githubusercontent.com/80455696/194698537-e25d5b69-3a29-4fe2-87e8-db462ab67774.png)
+( J'ai eu un problème avec la MACHINE VIRTUELLE de base j'ai donc chnager de vm !!! )
+
 
 3. A l’aide de la commande pvcreate, créez un volume physique LVM. Validez qu’il est bien créé, en
 utilisant la commande pvdisplay.
@@ -101,11 +101,20 @@ le volume physique créé à l’étape précédente. Vérifiez à l’aide de l
 6. Dans ce volume logique, créez une partition que vous formaterez en ext4, puis procédez comme dans
 l’exercice 1 pour qu’elle soit montée automatiquement, au démarrage de la machine, dans /data.
 
+On créer la partion en tappant `fdisk /dev/mapper/vg1-lvDATA `
+
 ![image](https://user-images.githubusercontent.com/80455696/194702513-6397efcf-730b-4d73-ac60-471d652c5b78.png)
+
+On formate ensuite la partition precedemment créer avec la commande `mkfs.ext4 /dev/mapper/vg1-lvDATA `
 
 ![image](https://user-images.githubusercontent.com/80455696/194702572-bce3a658-e062-49df-a56c-dcc251a36dbd.png)
 
+On edite le fichier `/etc/fstab` en ajoutant a la fin du fichier ` /dev/mapper/vg1-lvDATA /data ext4 defaults 0 0
+`. 
+
 ![image](https://user-images.githubusercontent.com/80455696/194702636-f6bf94ab-cddd-429a-9a1a-0fe1eaf3d211.png)
+
+Et on valide la nouvelle configuration du fichier avec la commande `sudo mount -a`
 
 ![image](https://user-images.githubusercontent.com/80455696/194702683-c6d30f50-4611-4c3b-aeb2-11f1c4ffe985.png)
 
