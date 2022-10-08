@@ -103,3 +103,8 @@ l’exercice 1 pour qu’elle soit montée automatiquement, au démarrage de la 
 
 ![image](https://user-images.githubusercontent.com/80455696/194699866-c2b53a20-19a2-44d9-9326-add772ef345c.png)
 
+![image](https://user-images.githubusercontent.com/80455696/194699997-6ce91d70-08dc-4ef5-a40b-6388c68a4007.png)
+
+7. Eteignez la VM pour ajouter un second disque (peu importe la taille pour cet exercice). Redémarrez
+la VM, vérifiez que le disque est bien présent. Puis, répétez les questions 2 et 3 sur ce nouveau disque.
+
