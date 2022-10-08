@@ -122,3 +122,9 @@ Et on valide la nouvelle configuration du fichier avec la commande `sudo mount -
 7. Eteignez la VM pour ajouter un second disque (peu importe la taille pour cet exercice). Redémarrez
 la VM, vérifiez que le disque est bien présent. Puis, répétez les questions 2 et 3 sur ce nouveau disque.
 
+8. Utilisez la commande vgextend <nom_vg> <nom_pv> pour ajouter le nouveau disque au groupe de
+volumes
+
+9. Utilisez la commande lvresize (ou lvextend) pour agrandir le volume logique. Enfin, il ne faut pas
+oublier de redimensionner le système de fichiers à l’aide de la commande resize2fs.
+
