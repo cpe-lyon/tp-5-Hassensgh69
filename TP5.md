@@ -76,7 +76,7 @@ Pour supprimer les deux partitions on tappe la commande suivante `sudo fdisk /de
 
 On créer ensuite une nouvelle partition :
 
-![image](https://user-images.githubusercontent.com/80455696/194698537-e25d5b69-3a29-4fe2-87e8-db462ab67774.png)
+![image](https://user-images.githubusercontent.com/80455696/194701726-628e435f-0fa0-4897-b5aa-4b1bade3535d.png)
 
 3. A l’aide de la commande pvcreate, créez un volume physique LVM. Validez qu’il est bien créé, en
 utilisant la commande pvdisplay.
