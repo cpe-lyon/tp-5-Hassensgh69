@@ -58,3 +58,36 @@ Pour ce faire j' ajoute a la fin du fichier /etc/fstab `/dev/sdc1 ext4 defaults 
 ## Exercice 2. Partitionnement LVM
 
 
+1. On va réutiliser le disque de 5 Gio de l’exercice précédent. Commencez par démonter les systèmes de
+fichiers montés dans /data et /win s’ils sont encore montés, et supprimez les lignes correspondantes
+du fichier /etc/fstab
+
+Pour demonter les sytèmes fichiers montés dans /data et /win on tappe la commande suivante ` sudo umount /win ` et ` sudo umount /data`
+
+![image](https://user-images.githubusercontent.com/80455696/194698212-07777576-78d2-456a-95b7-1ec3f009c3d2.png)
+
+Apres avoir fait ca on va supprimer les les lignes correspondantes u fichier /etc/fstab.
+
+2. Supprimez les deux partitions du disque, et créez une partition unique de type LVM
+
+Pour supprimer les deux partitions on tappe la commande suivante `sudo fdisk /dev/sdb`
+
+![image](https://user-images.githubusercontent.com/80455696/194698431-cb84a20c-c31d-40e5-999e-7b40fae3b474.png)
+
+On créer ensuite une nouvelle partition :
+
+![image](https://user-images.githubusercontent.com/80455696/194698537-e25d5b69-3a29-4fe2-87e8-db462ab67774.png)
+
+3. A l’aide de la commande pvcreate, créez un volume physique LVM. Validez qu’il est bien créé, en
+utilisant la commande pvdisplay.
+
+La commande `pvcreate` permet de créez un volume physique LVM.
+
+![image](https://user-images.githubusercontent.com/80455696/194699067-30c856ea-cd8e-43e9-bb6b-8aab23305213.png)
+
+La commande `pvdispaly` permet de validez que le volume physique LVM a bien été créer.
+
+![image](https://user-images.githubusercontent.com/80455696/194699078-413ee36f-2f6f-4234-95fe-f3aa343bb8d1.png)
+
+4. A l’aide de la commande vgcreate, créez un groupe de volumes, qui pour l’instant ne contiendra que
+le volume physique créé à l’étape précédente. Vérifiez à l’aide de la commande vgdisplay.
